@@ -1,15 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Provider } from 'react-redux';
 import HeaderComponent from './components/header';
 import BodyComponent from './components/body';
+import store from './store';
+import showResult from './components/mailChimpFormSubmit';
 
 function App() {
   return (
-    <div className="App">
-      <HeaderComponent></HeaderComponent>
-      <BodyComponent></BodyComponent>
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <HeaderComponent></HeaderComponent>
+        <BodyComponent onSubmit={showResult}></BodyComponent>
+      </div>
+    </Provider>
   );
 }
 

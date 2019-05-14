@@ -1,45 +1,43 @@
 import React from 'react';
-import ReactDom from 'react-dom';
 import Prototypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 
-const styles = theme =>({
+const styles = {
     container:{
         justifyContent: 'center',
         display: 'flex',
         flexWrap: 'wrap'
     },
     paper:{
-        margin: theme.spacing.unit * 2,
+        margin: '10px',
         textAlign: 'center'
     },
     input:{
         overflowY: 'scroll',
         resize: 'none',
-        margin: theme.spacing.unit * 2,
+        margin: '10px',
     }
-})
+}
 
 class OutputComponent extends React.Component{
     render(){
-        const { classes } = this.props;
 
         return(
             <div>
                 <Grid container spacing={24}>
-                    <Grid xs>
+                    <Grid item={true} xs>
                     </Grid>
-                    <Grid xs={6}>
-                    <Paper className={classes.paper}>
-                    <form className={classes.container} noValidate autoComplete="OFF">
+                    <Grid item={true} xs={10}>
+                    <Paper style={styles.paper}>
+                    <form style={styles.container} noValidate autoComplete="OFF">
                     <TextField
                     id="statusOutput"
                     label="Email API progress will be shown here..."
                     margin="normal"
-                    className={classes.input}
+                    style={styles.input}
                     variant="outlined"
                     fullWidth
                     multiline={true}
@@ -50,7 +48,7 @@ class OutputComponent extends React.Component{
                 </form>
                 </Paper>
                     </Grid>
-                    <Grid xs>
+                    <Grid item={true} xs>
                     </Grid>
                 </Grid>
                 </div>
